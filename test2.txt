@@ -1,0 +1,12 @@
+10.00 300 FALSE Duyệt khoản vay
+10.01 300 FALSE Duyệt khoản vay
+9.99 300 FALSE Yêu cầu bổ sung hồ sơ
+20.00 200 FALSE Duyệt khoản vay
+20.00 200 TRUE Từ chối khoản vay - có nợ xấu
+20.00 200.01 TRUE Từ chối khoản vay - có nợ xấu
+20.00 199.99 FALSE Từ chối khoản vay - điểm tín dụng thấp
+20.00 199.99 TRUE Từ chối khoản vay - hồ sơ xấu
+0.00 300 FALSE Yêu cầu bổ sung hồ sơ
+-0.01 300 FALSE Invalid
+20.00 -0.01 FALSE Invalid
+20.00 300 ABC Invalid
