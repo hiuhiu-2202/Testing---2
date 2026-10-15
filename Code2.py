@@ -1,22 +1,26 @@
-import string
-
-def homeCredit (income: float, credit: float, loan: string):
-    
-    if income < 0.00 or credit < 0  or loan not in ['TRUE', 'FALSE']:
+def homeCredit(income: float, credit: float, loan: str) -> str:
+    if income < 0 or credit < 0 or loan not in ("TRUE", "FALSE"):
+        # 1c1       1c2             1c3
         return "Invalid"
+        # 2
 
-    if income > 10.00 and credit >= 200 and loan == 'FALSE':     # Bug: Đổi income >= 10.00 thành income > 10.00
-        return "Duyệt khoản vay"
-
-    if credit >= 200 and loan == 'TRUE':                          # Bug: Đổi credit < 200 thành credit >= 200
-        return "Từ chối khoản vay - có nợ xấu"
-
-    if credit < 200 and loan == 'TRUE':                           # Bug: Đổi loan == 'FALSE' thành loan == 'TRUE'
+    if credit < 200:
+        # 3
+        if loan == "TRUE":
+            # 4
+            return "Từ chối khoản vay - hồ sơ xấu"
+            # 5
         return "Từ chối khoản vay - điểm tín dụng thấp"
+        # 6
 
-    if credit < 200 and loan == 'FALSE':                          # Bug: Đổi loan == 'TRUE' thành loan == 'FALSE'
-        return "Từ chối khoản vay - hồ sơ xấu"
+    if loan == "TRUE":
+        # 7
+        return "Từ chối khoản vay - có nợ xấu"
+        # 8
 
-    if income < 10.00 and credit >= 200 and loan == 'FALSE':
-        return "Yêu cầu bổ sung hồ sơ"
-            
+    if income >= 10:
+        # 9
+        return "Duyệt khoản vay"
+        # 10
+    return "Yêu cầu bổ sung hồ sơ"
+    # 11
